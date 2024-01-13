@@ -2,12 +2,18 @@ version: '3.8'
 
 services:
   sql-server:
-    build:
-      context: ./database
-      dockerfile: Dockerfile-sql
-    container_name: ms-sql-server
+    image: mcr.microsoft.com/mssql/server
+    container_name: sql-server
     ports:
       - "1433:1433"
+    environment:
+      SA_PASSWORD: 0000
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+    volumes:
+      - ./database/data:/var/opt/mssql/data
+    networks:
+      - mynetwork
 
   dacpac-deployer:
     build:
@@ -15,6 +21,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - sql-server
+    networks:
+      - mynetwork
 
   web-api:
     build:
@@ -24,4 +32,14 @@ services:
       - dacpac-deployer
     ports:
       - "5000:5000"
+    environment:
+      Settings__ConnectionString: "Server=sql-server;Database=Product;User Id=sa;Password=0000;"
+      Jwt__Issuer: "Issuer"
+      Jwt__Audience: "Audience"
+      Jwt__Key: "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    networks:
+      - mynetwork
 
+networks:
+  mynetwork:
+    driver: bridge

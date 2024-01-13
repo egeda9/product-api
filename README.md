@@ -143,7 +143,7 @@ This project leverages Docker for containerization, providing a consistent and r
    - The database or data storage can be deployed as a separate container, ensuring a decoupled and scalable architecture.
 
 
-##  5. Swagger Usage: http://localhost/swagger
+##  5. Swagger Usage:
 
 This project incorporates Swagger for API documentation and testing. Swagger provides a dynamic and interactive documentation interface that allows developers to understand, test, and interact with the API endpoints seamlessly.
 
@@ -170,3 +170,25 @@ This project incorporates Swagger for API documentation and testing. Swagger pro
 
 2. **Collaboration:**
    - The Swagger specification serves as a central source of truth for the API, fostering collaboration between development and documentation teams.
+
+## 6. Run the .NET Core Web API with Swagger via .NET CLI
+
+Open your terminal and run the following commands in the folder where the web api is located:
+
+### Build
+
+```
+dotnet build
+```
+
+### Run
+
+```
+dotnet run
+```
+
+### Access Swagger UI
+
+Open your web browser and navigate to [Swagger](http://localhost:5171/swagger/index.html). You should see the Swagger UI, where you can explore and test your API endpoints.
+
+That's it! You've successfully set up a .NET Core Web API with Swagger using the .NET CLI.
