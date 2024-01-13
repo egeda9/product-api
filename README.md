@@ -192,3 +192,11 @@ dotnet run
 Open your web browser and navigate to [Swagger](http://localhost:5171/swagger/index.html). You should see the Swagger UI, where you can explore and test your API endpoints.
 
 That's it! You've successfully set up a .NET Core Web API with Swagger using the .NET CLI.
+
+## 7. Run Unit Tests
+
+Open your terminal and run the following command in the folder where the test project is located:
+
+```
+dotnet test
+```
