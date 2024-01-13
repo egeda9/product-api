@@ -1,0 +1,71 @@
+# Ignore Visual Studio Code and Visual Studio files
+.vscode/
+*.suo
+*.user
+
+# Ignore bin and obj folders
+bin/
+obj/
+
+# Ignore build artifacts
+*.dll
+*.pdb
+*.exe
+*.json
+*.xml
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userosscache
+
+# Ignore the contents of bin and obj folders
+bin/*
+obj/*
+
+# Ignore NuGet packages
+*.nuget/
+packages/
+
+# Ignore the Visual Studio workspace file
+*.sln.docstates
+
+# Ignore Node.js files
+node_modules/
+npm-debug.log
+
+# Ignore Visual Studio Code folder
+.vscode/
+
+# Ignore Rider folder
+.idea/
+*.sln.iml
+
+# Ignore log files
+*.log
+
+# Ignore Resharper files
+_ReSharper*/
+*.resharper
+*.suo
+*.user
+
+# Ignore SQLite database files
+*.sqlite
+
+# Ignore Docker Compose override file
+docker-compose.override.yml
+
+# Ignore the local Docker development environment
+docker-compose.dc.dev.yml
+
+# Ignore Rider, Visual Studio, and VS Code settings
+.idea/
+*.suo
+*.user
+.vscode/
+*.code-workspace
+
+# Ignore the bin and obj folders of the test project
+**/Test/bin/*
+**/Test/obj/*
