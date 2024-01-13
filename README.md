@@ -1,5 +1,21 @@
 # Development of Web API for Product Management
 
+## User Story:
+
+As a product inventory manager, I want to develop a web api that enables seamless management of product records through CRUD operations and incorporates user authentication. 
+
+## Acceptance Criteria:
+
+1. **Effortless Product Management:** The application should offer an intuitive interface for creating, updating, and deleting product records through accessible and well-designed API endpoints.
+
+2. **Robust Data Structure:** The product data should be stored in a robust database structure featuring a unique identifier (primary key) and at least two additional fields such as product name, quantity, or category.
+
+3. **User Authentication and Access Control:** Implement a user-friendly API with features like user creation, login, and endpoints that require authentication, as well as endpoints accessible without authentication.
+
+4. **Reliable Testing:** Rigorously test the business logic layer to ensure reliability and robustness.
+
+5. **Easy Local Deployment with Docker:** The application should be effortlessly deployable locally, preferably utilizing Docker for simplicity. 
+
 ## 1. Database
 
 ### Product Table

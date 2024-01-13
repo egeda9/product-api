@@ -1,31 +1,27 @@
 version: '3.8'
 
 services:
-  web-api:
-    image: product-api:latest
+  sql-server:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./database
+      dockerfile: Dockerfile-sql
+    container_name: ms-sql-server
     ports:
-      - "8080:80"
-    networks:
-      - default
+      - "1433:1433"
+
+  dacpac-deployer:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
     depends_on:
       - sql-server
 
-  sql-server:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    environment:
-      SA_PASSWORD: "0000"
-      ACCEPT_EULA: "Y"
-      MSSQL_DB: "Product"
-      MSSQL_USER: "sa"
-      MSSQL_PASSWORD: "0000"
-      MSSQL_PID: "Express"
+  web-api:
+    build:
+      context: ./web-api
+      dockerfile: Dockerfile
+    depends_on:
+      - dacpac-deployer
     ports:
-      - "1433:1433"
-    networks:
-      - default
+      - "5000:5000"
 
-networks:
-  default:
